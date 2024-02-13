@@ -16,7 +16,7 @@ int main() {
 	// Online();
 	ll n, sum = 0; cin >> n;
 	char c;
-	for(ll i = 0; i < n; i++) {
+	for (ll i = 0; i < n; i++) {
 		cin >> c;
 		sum += (c - '0');
 	}

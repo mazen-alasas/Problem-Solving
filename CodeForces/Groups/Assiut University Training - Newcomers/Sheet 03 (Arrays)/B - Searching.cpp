@@ -16,13 +16,12 @@ int main() {
 	// Online();
 	int n, x; cin>>n;
 	int a[n];
-	for(int i = 0; i < n; cin >> a[i++]);
+	for (int i = 0; i < n; cin >> a[i++]);
 	cin >> x;
-	for(int i = 0; i < n; i++) {
-			if(x == a[i]) {
-					cout << i;
-					return 0;
-			}
+	for (int i = 0; i < n; i++) {
+		if (x == a[i]) {
+			return !(cout << i);
+		}
 	}
 	cout << -1;
 	return 0;

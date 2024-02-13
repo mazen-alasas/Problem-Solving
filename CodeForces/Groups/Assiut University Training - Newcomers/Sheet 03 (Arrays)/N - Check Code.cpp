@@ -17,11 +17,12 @@ int main() {
 	ll a, b; cin >> a >> b;
 	ll n = a + b + 1;
 	char c[n];
-	for(ll i = 0; i < n; cin >> c[i++]);
+	for (ll i = 0; i < n; cin >> c[i++]);
 	ll flag = (c[a] == '-');
-	for(ll i = 0; i < n; i++) {
-		if(c[i] == c[a])
+	for (ll i = 0; i < n; i++) {
+		if (c[i] == c[a]) {
 			continue;
+		}
 		flag += (c[i] >= 48 && c[i] <= 57);
 	}
 	cout << (flag == n ? "Yes" : "No");

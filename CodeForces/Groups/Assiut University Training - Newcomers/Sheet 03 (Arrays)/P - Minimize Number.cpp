@@ -16,12 +16,13 @@ int main() {
 	//Online();
 	ll n; cin >> n;
 	ll a[n], finalRes = INT_MAX;
-	for(ll i = 0; i < n; cin>>a[i++]);
-	for(ll j = 0; j < n; j++) {
+	for (ll i = 0; i < n; cin >> a[i++]);
+	for (ll j = 0; j < n; j++) {
 		ll flag = 0;
-		if(a[j] % 2)
-			return cout << 0, 0;
-		while(a[j] % 2 == 0) {
+		if (a[j] % 2) {
+			return !(cout << 0);
+		}
+		while (a[j] % 2 == 0) {
 			flag++;
 			a[j] = a[j] / 2;
 		}

@@ -16,18 +16,18 @@ int main() {
 	// Online();
 	ll n; cin >> n;
 	ll a[n], mn = INT_MAX, mx = INT_MIN, mn_idx, mx_idx;
-	for(ll i = 0; i < n; i++) {
+	for (ll i = 0; i < n; i++) {
 		cin >> a[i];
-		if(a[i] < mn) {
+		if (a[i] < mn) {
 			mn = a[i];
 			mn_idx = i;
 		}
-		if(a[i] > mx) {
+		if (a[i] > mx) {
 			mx = a[i];
 			mx_idx = i;
 		}
 	}
 	swap(a[mn_idx], a[mx_idx]);
-	for(ll i = 0; i < n; cout << a[i++] << ' ');
+	for (ll i = 0; i < n; cout << a[i++] << ' ');
 	return 0;
 }

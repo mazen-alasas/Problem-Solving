@@ -16,10 +16,11 @@ int main() {
 	// Online();
 	ll n; cin >> n;
 	ll a[n], ctr = 0;
-	for(ll i = 0; i < n; cin >> a[i++]);
+	for (ll i = 0; i < n; cin >> a[i++]);
 	ll mn = *min_element(a, a + n);
-	for(ll i = 0; i < n; i++)
+	for (ll i = 0; i < n; i++) {
 		ctr += (a[i] == mn);
+	}
 	cout << (ctr % 2 ? "Lucky" : "Unlucky");
 	return 0;
 }

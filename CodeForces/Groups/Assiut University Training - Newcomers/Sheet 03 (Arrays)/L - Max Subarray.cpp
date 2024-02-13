@@ -17,11 +17,11 @@ int main() {
 	T {
 		ll n; cin >> n;
 		ll a[n], i, j;
-		for(i = 0; i < n; cin >> a[i++]);
-		for(i = 0; i < n; cout << a[i++] << ' ');
-		for(i = 0; i < n; i++) {
+		for (i = 0; i < n; cin >> a[i++]);
+		for (i = 0; i < n; cout << a[i++] << ' ');
+		for (i = 0; i < n; i++) {
 			ll mx = a[i];
-			for(j = i + 1; j < n; j++) {
+			for (j = i + 1; j < n; j++) {
 				mx = max(mx, a[j]);
 				cout << mx << ' ';
 			}

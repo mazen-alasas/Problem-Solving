@@ -16,14 +16,15 @@ int main() {
 	// Online();
 	ll n; cin >> n;
 	ll a[n];
-	for(int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++) {
 	    cin >> a[i];
-		if(a[i] > 0)
+		if (a[i] > 0) {
 			a[i] = 1;
-		else if(a[i] < 0)
+		} else if (a[i] < 0) {
 			a[i] = 2;
-		else
+		} else {
 			a[i] = 0;
+		}
 		cout << a[i] << ' ';
 	}
 	return 0;

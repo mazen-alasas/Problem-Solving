@@ -15,11 +15,11 @@ int main() {
 	IOS
 	// Online();
 	ll n; cin >> n;
-	ll a[n], i, j = n - 1;
-	for(i = 0; i < n; cin >> a[i++]);
-	i = 0;
-	while(i < j)
-		swap(a[i++], a[j--]);
-	for(i = 0; i < n; cout << a[i++] << ' ');
+	ll a[n], l = 0, r = n - 1;
+	for (ll i = 0; i < n; cin >> a[i++]);
+	while (l < r) {
+		swap(a[l++], a[r--]);
+	}
+	for (ll i = 0; i < n; cout << a[i++] << ' ');
 	return 0;
 }

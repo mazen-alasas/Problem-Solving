@@ -15,12 +15,13 @@ int main() {
 	IOS
 	// Online();
 	ll n; cin >> n;
-	ll a[n], i, j = n - 1;
-	for(i = 0; i < n; cin >> a[i++]);
-	i = 0;
-	while(i < j)
-		if(a[i++] != a[j--])
-			return cout << "NO", 0;
+	ll a[n], l = 0, r = n - 1;
+	for (ll i = 0; i < n; cin >> a[i++]);
+	while (l < r) {
+		if (a[l++] != a[r--]) {
+			return !(cout << "NO");
+		}
+	}
 	cout << "YES";
 	return 0;
 }

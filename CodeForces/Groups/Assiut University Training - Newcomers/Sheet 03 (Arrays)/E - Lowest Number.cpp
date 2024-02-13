@@ -16,9 +16,9 @@ int main() {
 	// Online();
 	ll n; cin >> n;
 	ll a[n], mn = INT_MAX, idx = -1;
-	for(ll i = 0; i < n; i++) {
+	for (ll i = 0; i < n; i++) {
 		cin >> a[i];
-		if(a[i] < mn) {
+		if (a[i] < mn) {
 			mn = a[i];
 			idx = i + 1;
 		}

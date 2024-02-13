@@ -16,10 +16,11 @@ int main() {
 	// Online();
 	ll n; cin >> n;
 	ll a[n];
-	for(ll i = 0; i < n; cin >> a[i++]);
-	for(int i = 0; i < n; i++) {
-		if(a[i] <= 10)
+	for (ll i = 0; i < n; cin >> a[i++]);
+	for (int i = 0; i < n; i++) {
+		if (a[i] <= 10) {
 			cout << "A[" << i << "] = " << a[i] << endl;
+		}
 	}
 	return 0;
 }

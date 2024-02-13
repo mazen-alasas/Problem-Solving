@@ -15,14 +15,15 @@ int main() {
 	IOS
 	// Online();
 	ll n; cin >> n;
-	ll a[n], i;
-	for(i = 0; i < n; cin >> a[i++]);
-	for(i = 0; i < n; i++) {
-		for(ll j = i + 1; j < n; j++) {
-			if(a[i] > a[j])
+	ll a[n];
+	for (ll i = 0; i < n; cin >> a[i++]);
+	for (ll i = 0; i < n; i++) {
+		for (ll j = i + 1; j < n; j++) {
+			if (a[i] > a[j]) {
 				swap(a[i], a[j]);
+			}
 		}
 	}
-	for(i = 0; i < n; cout << a[i++] << ' ');
+	for (ll i = 0; i < n; cout << a[i++] << ' ');
 	return 0;
 }

@@ -17,9 +17,9 @@ int main() {
 	T {
 		ll n; cin >> n;
 		ll a[n + 1], mn = INT_MAX;
-		for(int i = 1; i <= n; cin >> a[i++]);
-		for(int i = 1; i <= n; i++) {
-			for(int j = i + 1; j <= n; j++) {
+		for (ll i = 1; i <= n; cin >> a[i++]);
+		for (ll i = 1; i <= n; i++) {
+			for (ll j = i + 1; j <= n; j++) {
 				mn = min(mn, a[i] + a[j] + j - i);
 			}
 		}
