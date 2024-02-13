@@ -17,20 +17,15 @@ void Online() {
 int main() {
 	IOS
 	// Online();
-	ll n; cin >> n;
-	if(n == 1)
-		cout << 0;
-	else if(n == 2)
-		cout << 0 << ' ' << 1;
-	else {
-		cout << 0 << ' ' << 1 << ' ';
-		ll f = 0, t = 1;
-		for(ll i = 3; i <= n; i++) {
-			ll x = f + t;
-			cout << x << ' ';
-			f = t;
-			t = x;
+	ll n, m, ctr = 0; cin >> n >> m;
+	ll a[n], b[m], x = 0;
+	for (ll i = 0; i < n; cin >> a[i++]);
+	for (ll i = 0; i < m; cin >> b[i++]);
+	for (ll i = 0; i < n; i++) {
+		if (a[i] == b [x]) {
+			ctr++, x++;
 		}
 	}
+	cout << (ctr == m ? "YES" : "NO");
 	return 0;
 }

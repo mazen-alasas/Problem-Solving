@@ -17,18 +17,25 @@ void Online() {
 int main() {
 	IOS
 	// Online();
-	T {
-		ll a, b, s = 0;
-		cin >> a >> b;
-		ll mx = (max(a, b) % 2 == 1) ? max(a, b) - 1 : max(a, b);
-		ll mn = (min(a, b) % 2 == 1) ? min(a, b) + 1 : min(a, b);
-		for(ll i = mn; i <= mx; i++) {
-			if(max(a, b) - min(a, b) == 1)
+	ll n, q; cin >> n >> q;
+	ll a[n];
+	for (ll i = 0; i < n; cin >> a[i++]);
+	sort(a, a + n);
+	while (q--) {
+		ll x, l = 0, r = n - 1, here = 0;
+		cin >> x;
+		while (l <= r) {
+			ll mid = (l + r) / 2;
+			if (a[mid] == x) {
+				here = 1;
 				break;
-			else if(i % 2)
-				s += i;
+			} else if(a[mid] < x) {
+				l = mid + 1;
+			} else {
+				r = mid - 1;
+			}
 		}
-		cout << s << endl;
+		cout << (here ? "found" : "not found") << endl;
 	}
 	return 0;
 }

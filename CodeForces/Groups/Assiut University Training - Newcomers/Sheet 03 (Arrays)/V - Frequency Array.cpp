@@ -17,20 +17,13 @@ void Online() {
 int main() {
 	IOS
 	// Online();
-	ll n; cin >> n;
-	for(ll i = 1; i <= n; i++) {
-		for(ll j = n - i; j > 0; j--)
-			cout << ' ';
-		for(ll j = 1; j <= i * 2 - 1; j++)
-			cout << '*';
-		cout << endl;
+	ll n, m; cin >> n >> m;
+	ll a[n], freq[m + 1]{};
+	for (ll i = 0; i < n; i++) {
+		cin >> a[i];
+		freq[a[i]]++;
 	}
-	for(ll i = n; i >= 1; i--){
-		for(ll j = 0; j < n - i; j++)
-			cout << ' ';
-		for(ll j = 1; j <= 2 * i - 1;j++)
-			cout << '*';
-		cout << endl;
-	}
+	for (ll i = 1; i <= m; i++)
+		cout << freq[i] << '\n';
 	return 0;
 }

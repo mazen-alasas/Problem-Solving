@@ -1,11 +1,9 @@
-///                بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ
 /** إن الله وملائكته يصلون على النبي يا أيها الذين آمنوا صلوا عليه وسلموا تسليما **/
 #include <bits/stdc++.h>
 #define  ll         long long
 #define  fix(n)     fixed << setprecision(n)
 #define  T          ll tests; cin >> tests; while(tests--)
 #define  IOS        ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-const int mod = 1e9 + 7;
 using namespace std;
 void Online() {
 	#ifdef ONLINE_JUDGE
@@ -13,12 +11,18 @@ void Online() {
 		freopen("output.txt", "w", stdout);
 	#endif
 }
-
 int main() {
 	IOS
 	// Online();
 	ll n; cin >> n;
-	for(ll i = 1; i <= n * 4; i += 4)
-		cout << i << ' ' << i + 1 << ' ' << i + 2 << " PUM" << endl;
+	ll a[n][n], p = 0, s = 0;
+	for (ll i = 0; i < n; i++) {
+		for (ll j = 0; j < n; j++) {
+			cin >> a[i][j];
+			p += (i == j) * a[i][j];
+			s += (j == n - i - 1) * a[i][j];
+		}
+	}
+	cout << abs(s - p);
 	return 0;
 }

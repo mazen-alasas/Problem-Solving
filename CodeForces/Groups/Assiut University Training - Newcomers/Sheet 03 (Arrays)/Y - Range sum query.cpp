@@ -17,16 +17,16 @@ void Online() {
 int main() {
 	IOS
 	// Online();
-	T {
-		ll n, ctr = 0, s = 0; cin >> n;
-		while(n) {
-			if(n % 2) {
-				s += pow(2, ctr);
-				ctr++;
-			}
-			n /= 2;
-		}
-		cout << s << endl;
+	ll n, q; cin >> n >> q;
+	ll a[n], pre[n]{};
+	for (ll i = 0; i < n; cin >> a[i++]);
+	pre[0] = a[0];
+	for(ll i = 1; i < n; i++) {
+		pre[i] = pre[i - 1] + a[i];
+	}
+	for (ll i = 0; i < q; i++) {
+		ll l, r; cin >> l >> r;
+		cout << pre[r - 1] - pre[l - 1] + a[l - 1] << endl;
 	}
 	return 0;
 }
