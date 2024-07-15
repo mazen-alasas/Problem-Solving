@@ -5,7 +5,7 @@
 #define  fix(n)     fixed << setprecision(n)
 #define  T          ll tests; cin >> tests; while(tests--)
 #define  IOS        ios_base::sync_with_stdio(0); cin.tie(0);
-const int mod = 1e9 + 7, N = 1e6 + 7, INF = 0x3f3f3f3f;
+const int mod = 1e9 + 7, N = 2e5 + 9, INF = 0x3f3f3f3f;
 const double eps = 1e-9;
 using namespace std;
 void Online() {
@@ -14,21 +14,32 @@ void Online() {
 		freopen("output.txt", "w", stdout);
 	#endif
 }
+ll a[N], l[N], r[N], d[N], inc[N], pre[N];
 
 int main() {
 	IOS
 	//Online();
-	ll n, a, b, c, mx = 0;
-	cin >> n >> a >> b >> c;
-	for(ll i = 0; i <= n; i++) {
-		for(ll j = 0; j <= n; j++) {
-			ll v = (n - i * a - j * b) / c;
-			v = (v < 0) ? 0 : v;
-			if(i * a + j * b + v * c == n) {
-				mx = max(mx, i + j + v);
-			}
-		} 
+	ll n, m, k; cin >> n >> m >> k;
+	for(ll i = 1; i ^ (n + 1); cin >> a[i++]);
+	for(ll i = 1; i ^ (m + 1); i++) {
+		cin >> l[i] >> r[i] >> d[i];
 	}
-	cout << mx;
+	while(k--) {
+		ll x, y; cin >> x >> y;
+		inc[x]++, inc[y + 1]--;
+	}
+	for(ll i = 1; i ^ (m + 1); i++) {
+		inc[i] += inc[i - 1];
+	}
+	for(ll i = 1; i ^ (m + 1); i++) {
+		pre[l[i]] += (d[i] * inc[i]);
+		pre[r[i] + 1] -= (d[i] * inc[i]);
+	}
+	for(ll i = 1; i ^ (n + 1); i++) {
+		pre[i] += pre[i - 1];
+	}
+	for(ll i = 1; i ^ (n + 1); i++) {
+		cout << a[i] + pre[i] << ' ';
+	}
 	return 0;
 }
